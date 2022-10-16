@@ -2,4 +2,5 @@
 name = "scholar"
 version = "0.1.7"
 authors = ["Thomas Freeman <tomclaudefreeman@gmail.com>"]
-edition = 
+edition = "2018"
+de
