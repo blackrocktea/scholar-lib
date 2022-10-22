@@ -3,4 +3,5 @@ name = "scholar"
 version = "0.1.7"
 authors = ["Thomas Freeman <tomclaudefreeman@gmail.com>"]
 edition = "2018"
-description = "A supervised machine learning librar
+description = "A supervised machine learning library."
+re
