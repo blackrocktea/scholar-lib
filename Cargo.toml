@@ -13,3 +13,4 @@ license-file = "LICENSE"
 [dependencies]
 bincode = "1"
 csv = "1"
+indicat
