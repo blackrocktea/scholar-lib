@@ -16,4 +16,4 @@ csv = "1"
 indicatif = "0.14"
 nalgebra = { version = "0.21", features = ["serde-serialize"] }
 rand = "0.7"
-serde = { ve
+serde = { versi
