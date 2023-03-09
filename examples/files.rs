@@ -17,3 +17,8 @@ fn main() -> anyhow::Result<()> {
     brain.save("examples/brain.network")?;
 
     let mut brain: NeuralNet<Sigmoid> = NeuralNet::from_file("examples/brain.network")?;
+
+    println!("Prediction: {:.2}", brain.guess(&[1.0, 1.0])[0]);
+
+    Ok(())
+}
