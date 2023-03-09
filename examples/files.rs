@@ -10,3 +10,6 @@ fn main() -> anyhow::Result<()> {
     ];
 
     let dataset = Dataset::from(data);
+
+    let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[2, 2, 1]);
+    brain.train(dataset, 250_000, 0.01);
