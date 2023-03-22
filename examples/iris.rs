@@ -1,1 +1,1 @@
-use scholar::{Dataset, NeuralNet, Si
+use scholar::{Dataset, NeuralNet, Sigmoi
