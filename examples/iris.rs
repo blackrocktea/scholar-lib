@@ -5,4 +5,4 @@ fn main() -> anyhow::Result<()> {
     let (training_data, testing_data) = dataset.split(0.75);
 
     let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[4, 10, 10, 3]);
-    brain.train(train
+    brain.train(training_
