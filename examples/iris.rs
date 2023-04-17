@@ -7,4 +7,4 @@ fn main() -> anyhow::Result<()> {
     let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[4, 10, 10, 3]);
     brain.train(training_data, 25_000, 0.01);
 
-    
+    println!
