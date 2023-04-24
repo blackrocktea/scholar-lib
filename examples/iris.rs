@@ -8,3 +8,4 @@ fn main() -> anyhow::Result<()> {
     brain.train(training_data, 25_000, 0.01);
 
     println!("Accuracy: {:.2}%", (1.0 - brain.test(testing_data)) * 100.0);
+
