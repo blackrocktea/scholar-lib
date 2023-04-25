@@ -10,3 +10,4 @@ fn main() -> anyhow::Result<()> {
     println!("Accuracy: {:.2}%", (1.0 - brain.test(testing_data)) * 100.0);
 
     Ok(())
+}
