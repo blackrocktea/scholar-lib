@@ -1,1 +1,1 @@
-use sc
+use schola
