@@ -1,3 +1,3 @@
 use scholar::{Dataset, NeuralNet, Sigmoid};
 
-f
+fn ma
