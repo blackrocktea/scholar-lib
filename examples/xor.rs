@@ -8,4 +8,6 @@ fn main() {
         (vec![1.0, 1.0], vec![0.0]),
     ];
 
-    let dataset = Dataset::from(data
+    let dataset = Dataset::from(data);
+
+  
