@@ -10,4 +10,4 @@ fn main() {
 
     let dataset = Dataset::from(data);
 
-    let mut brain: Neu
+    let mut brain: Neural
