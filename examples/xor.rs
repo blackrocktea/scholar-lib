@@ -10,4 +10,4 @@ fn main() {
 
     let dataset = Dataset::from(data);
 
-    let mut brain: NeuralNet<Sigmo
+    let mut brain: NeuralNet<Sigmoid> 
