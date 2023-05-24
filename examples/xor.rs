@@ -10,4 +10,4 @@ fn main() {
 
     let dataset = Dataset::from(data);
 
-    let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[2, 10, 10,
+    let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[2, 10, 10, 1]);
