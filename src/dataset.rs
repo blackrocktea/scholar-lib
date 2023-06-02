@@ -21,3 +21,11 @@ type Row = (Vec<f64>, Vec<f64>);
 /// let dataset = scholar::Dataset::from(data);
 /// ```
 #[derive(Debug)]
+pub struct Dataset {
+    data: Vec<Row>,
+}
+
+impl Dataset {
+    /// Parses a `Dataset` from a CSV file.
+    ///
+    /// # Arguments
