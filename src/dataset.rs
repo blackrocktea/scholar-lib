@@ -35,3 +35,6 @@ impl Dataset {
     /// * `num_inputs` - The number of columns in the CSV that are designated as inputs (to a
     /// Machine Learning model)
     ///
+    /// # Examples
+    /// ```rust
+    /// // Parses the first four columns of 'iris.csv' as inputs, and the remaining columns as
