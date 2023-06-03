@@ -29,3 +29,8 @@ impl Dataset {
     /// Parses a `Dataset` from a CSV file.
     ///
     /// # Arguments
+    ///
+    /// * `file_path` - The path to the CSV file
+    /// * `includes_headers` - Whether the CSV has a header row or not
+    /// * `num_inputs` - The number of columns in the CSV that are designated as inputs (to a
+    /// Machine Learning model)
