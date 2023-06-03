@@ -38,3 +38,5 @@ impl Dataset {
     /// # Examples
     /// ```rust
     /// // Parses the first four columns of 'iris.csv' as inputs, and the remaining columns as
+    /// // target outputs
+    /// let dataset = scholar::Dataset::from_csv("iris.csv", false, 4);
