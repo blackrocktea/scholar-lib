@@ -47,3 +47,10 @@ impl Dataset {
         num_inputs: usize,
     ) -> Result<Self, ParseCsvError> {
         use std::str::FromStr;
+
+        let file = std::fs::File::open(file_path)?;
+        let mut reader = csv::ReaderBuilder::new()
+            .has_headers(includes_headers)
+            .from_reader(file);
+
+        let data: Result<Vec<Row>, ParseCsvError> = reader
