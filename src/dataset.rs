@@ -42,3 +42,8 @@ impl Dataset {
     /// let dataset = scholar::Dataset::from_csv("iris.csv", false, 4);
     /// ```
     pub fn from_csv(
+        file_path: impl AsRef<std::path::Path>,
+        includes_headers: bool,
+        num_inputs: usize,
+    ) -> Result<Self, ParseCsvError> {
+        use std::str::FromStr;
