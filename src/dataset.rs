@@ -64,3 +64,11 @@ impl Dataset {
                         let val = val.trim();
                         f64::from_str(val)
                     })
+                    .collect::<Result<Vec<_>, _>>()?;
+
+                let mut inputs = row;
+                // Splits the row into input and output vectors
+                let outputs = inputs.split_off(num_inputs);
+                Ok((inputs, outputs))
+            })
+            .collect();
