@@ -60,3 +60,7 @@ impl Dataset {
                 let row = row?;
                 let row = row
                     .iter()
+                    .map(|val| {
+                        let val = val.trim();
+                        f64::from_str(val)
+                    })
