@@ -54,3 +54,9 @@ impl Dataset {
             .from_reader(file);
 
         let data: Result<Vec<Row>, ParseCsvError> = reader
+            .records()
+            .map(|row| {
+                // Catches a possible parsing error
+                let row = row?;
+                let row = row
+                    .iter()
