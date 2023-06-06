@@ -76,3 +76,10 @@ impl Dataset {
     }
 
     /// Splits the dataset into two, with the size of each determined by the given `train_portion`.
+    /// This is useful for separating it into training and testing segments.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// let dataset = scholar::Dataset::from_csv("iris.csv", false, 4)?;
+    ///
