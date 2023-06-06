@@ -72,3 +72,7 @@ impl Dataset {
                 Ok((inputs, outputs))
             })
             .collect();
+        Ok(Dataset::from(data?))
+    }
+
+    /// Splits the dataset into two, with the size of each determined by the given `train_portion`.
