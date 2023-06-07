@@ -83,3 +83,5 @@ impl Dataset {
     /// ```rust
     /// let dataset = scholar::Dataset::from_csv("iris.csv", false, 4)?;
     ///
+    /// // Randomly allocates 75% of the original dataset to `training_data`, and the rest
+    /// // to `testing_data`
