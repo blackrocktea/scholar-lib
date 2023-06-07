@@ -85,3 +85,12 @@ impl Dataset {
     ///
     /// // Randomly allocates 75% of the original dataset to `training_data`, and the rest
     /// // to `testing_data`
+    /// let (training_data, testing_data) = dataset.split(0.75);
+    /// ```
+    ///
+    /// # Panics
+    ///
+    /// This method panics if the given `train_portion` isn't between 0 and 1.
+    pub fn split(mut self, train_portion: f64) -> (Self, Self) {
+        if train_portion < 0.0 || train_portion > 1.0 {
+            panic!(
