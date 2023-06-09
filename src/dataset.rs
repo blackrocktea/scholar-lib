@@ -94,3 +94,7 @@ impl Dataset {
     pub fn split(mut self, train_portion: f64) -> (Self, Self) {
         if train_portion < 0.0 || train_portion > 1.0 {
             panic!(
+                "training portion must be between 0 and 1 (found {})",
+                train_portion
+            );
+        }
