@@ -98,3 +98,6 @@ impl Dataset {
                 train_portion
             );
         }
+
+        // Shuffles the dataset to ensure a random split
+        self.shuffle();
