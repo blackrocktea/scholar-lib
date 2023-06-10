@@ -101,3 +101,11 @@ impl Dataset {
 
         // Shuffles the dataset to ensure a random split
         self.shuffle();
+
+        let index = self.data.len() as f64 * train_portion;
+        let test_split = self.data.split_off(index.round() as usize);
+
+        (self, Self::from(test_split))
+    }
+
+    /// Shuffles the rows in the dataset.
