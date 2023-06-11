@@ -109,3 +109,9 @@ impl Dataset {
     }
 
     /// Shuffles the rows in the dataset.
+    pub(crate) fn shuffle(&mut self) {
+        self.data.shuffle(&mut rand::thread_rng());
+    }
+
+    /// Returns the number of rows in the dataset.
+    ///
