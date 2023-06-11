@@ -115,3 +115,9 @@ impl Dataset {
 
     /// Returns the number of rows in the dataset.
     ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// // Data for the XOR problem
+    /// let data = vec![
+    ///     (vec![0.0, 0.0], vec![0.0]),
