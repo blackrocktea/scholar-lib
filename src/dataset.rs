@@ -127,3 +127,8 @@ impl Dataset {
     /// ];
     ///
     /// let dataset = scholar::Dataset::from(data);
+    /// assert_eq!(dataset.rows(), 4);
+    /// ```
+    pub fn rows(&self) -> usize {
+        self.data.len()
+    }
