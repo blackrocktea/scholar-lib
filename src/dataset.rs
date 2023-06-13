@@ -132,3 +132,8 @@ impl Dataset {
     pub fn rows(&self) -> usize {
         self.data.len()
     }
+
+    /// Returns a reference to the row at the specified index.
+    fn get(&self, index: usize) -> Option<&Row> {
+        self.data.get(index)
+    }
