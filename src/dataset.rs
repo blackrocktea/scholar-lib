@@ -137,3 +137,9 @@ impl Dataset {
     fn get(&self, index: usize) -> Option<&Row> {
         self.data.get(index)
     }
+}
+
+/// An enumeration over the possible errors when parsing a `Dataset` from a CSV.
+#[derive(thiserror::Error, Debug)]
+pub enum ParseCsvError {
+    /// When reading from a file fails.
