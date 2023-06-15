@@ -149,3 +149,12 @@ pub enum ParseCsvError {
     #[error("failed to parse CSV")]
     Parse(#[from] csv::Error),
     /// When converting CSV values to floats fails.
+    #[error("failed to convert value into float")]
+    Convert(#[from] std::num::ParseFloatError),
+}
+
+impl From<Vec<Row>> for Dataset {
+    fn from(data: Vec<Row>) -> Self {
+        Self { data }
+    }
+}
