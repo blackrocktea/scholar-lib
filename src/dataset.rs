@@ -164,3 +164,9 @@ impl<'a> IntoIterator for &'a Dataset {
     type IntoIter = DatasetIterator<'a>;
 
     fn into_iter(self) -> Self::IntoIter {
+        DatasetIterator {
+            dataset: self,
+            index: 0,
+        }
+    }
+}
