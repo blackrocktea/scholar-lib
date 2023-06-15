@@ -170,3 +170,9 @@ impl<'a> IntoIterator for &'a Dataset {
         }
     }
 }
+
+/// An iterator over a `Dataset`.
+pub struct DatasetIterator<'a> {
+    dataset: &'a Dataset,
+    index: usize,
+}
