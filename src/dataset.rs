@@ -158,3 +158,9 @@ impl From<Vec<Row>> for Dataset {
         Self { data }
     }
 }
+
+impl<'a> IntoIterator for &'a Dataset {
+    type Item = &'a Row;
+    type IntoIter = DatasetIterator<'a>;
+
+    fn into_iter(self) -> Self::IntoIter {
