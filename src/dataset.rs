@@ -184,3 +184,4 @@ impl<'a> Iterator for DatasetIterator<'a> {
         self.index += 1;
         result
     }
+}
