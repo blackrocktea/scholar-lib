@@ -176,3 +176,11 @@ pub struct DatasetIterator<'a> {
     dataset: &'a Dataset,
     index: usize,
 }
+
+impl<'a> Iterator for DatasetIterator<'a> {
+    type Item = &'a Row;
+    fn next(&mut self) -> Option<Self::Item> {
+        let result = self.dataset.get(self.index);
+        self.index += 1;
+        result
+    }
