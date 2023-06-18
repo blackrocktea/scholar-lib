@@ -1,1 +1,1 @@
-//! A supervis
+//! A supervised 
