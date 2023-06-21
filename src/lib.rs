@@ -1,1 +1,1 @@
-//! A supervised machine learning lib
+//! A supervised machine learning library.
