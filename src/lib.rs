@@ -1,2 +1,3 @@
 //! A supervised machine learning library.
-#![warn(missing_docs)
+#![warn(missing_docs)]
+mod
