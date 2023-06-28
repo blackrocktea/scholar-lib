@@ -4,4 +4,4 @@ mod dataset;
 mod network;
 mod utils;
 
-pub use dat
+pub use dataset::
