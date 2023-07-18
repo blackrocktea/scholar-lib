@@ -5,4 +5,4 @@ mod network;
 mod utils;
 
 pub use dataset::*;
-pub use network:
+pub use network::*;
