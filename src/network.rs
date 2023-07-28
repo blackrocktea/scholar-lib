@@ -15,3 +15,9 @@ pub struct NeuralNet<A: Activation> {
     biases: Vec<DMatrix<f64>>,
     errors: Vec<DMatrix<f64>>,
     activation: PhantomData<A>,
+}
+
+impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
+    /// Creates a new `NeuralNet` with the given node configuration.
+    ///
+    /// Note that you must supply a type annotation so that it knows which
