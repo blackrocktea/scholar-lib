@@ -21,3 +21,6 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// Creates a new `NeuralNet` with the given node configuration.
     ///
     /// Note that you must supply a type annotation so that it knows which
+    /// [`Activation`](#trait.Activation) to use.
+    ///
+    /// # Examples
