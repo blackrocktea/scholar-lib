@@ -35,3 +35,10 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     ///
     /// # Panics
     ///
+    /// This function panics if the number of layers (i.e. the length of the given `node_counts`
+    /// slice) is less than 2.
+    pub fn new(node_counts: &[usize]) -> Self {
+        let num_layers = node_counts.len();
+        if num_layers < 2 {
+            panic!(
+                "not enough layers supplied (expected at least 2, found {})",
