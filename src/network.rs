@@ -24,3 +24,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// [`Activation`](#trait.Activation) to use.
     ///
     /// # Examples
+    ///
+    /// ```rust
+    /// use scholar::{NeuralNet, Sigmoid};
+    ///
