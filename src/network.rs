@@ -28,3 +28,6 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// ```rust
     /// use scholar::{NeuralNet, Sigmoid};
     ///
+    /// // Creates a neural network with two input nodes, a single hidden layer with two nodes,
+    /// // and one output node
+    /// let brain: NeuralNet<Sigmoid> = NeuralNet::new(&[2, 2, 1]);
