@@ -42,3 +42,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         if num_layers < 2 {
             panic!(
                 "not enough layers supplied (expected at least 2, found {})",
+                num_layers
+            );
+        }
+
+        Self {
