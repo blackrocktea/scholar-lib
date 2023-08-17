@@ -55,3 +55,6 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
                 .iter()
                 .skip(1)
                 .map(|c| gen_random_matrix(*c, 1))
+                .collect(),
+            errors: node_counts
+                .iter()
