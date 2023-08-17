@@ -47,3 +47,11 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         }
 
         Self {
+            layers: node_counts.iter().map(|c| DMatrix::zeros(*c, 1)).collect(),
+            weights: (1..num_layers)
+                .map(|i| gen_random_matrix(node_counts[i], node_counts[i - 1]))
+                .collect(),
+            biases: node_counts
+                .iter()
+                .skip(1)
+                .map(|c| gen_random_matrix(*c, 1))
