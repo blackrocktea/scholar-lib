@@ -64,3 +64,9 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             activation: PhantomData,
         }
     }
+
+    /// Creates a new `NeuralNet` from a valid file (those created using
+    /// [`NeuralNet::save()`](#method.save)).
+    ///
+    /// # Examples
+    ///
