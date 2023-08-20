@@ -58,3 +58,9 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
                 .collect(),
             errors: node_counts
                 .iter()
+                .skip(1)
+                .map(|c| DMatrix::zeros(*c, 1))
+                .collect(),
+            activation: PhantomData,
+        }
+    }
