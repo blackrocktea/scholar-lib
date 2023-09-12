@@ -70,3 +70,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     ///
     /// # Examples
     ///
+    /// ```rust
+    /// use scholar::{NeuralNet, Sigmoid};
+    ///
+    /// let brain: NeuralNet<Sigmoid> = NeuralNet::from_file("brain.network")?;
+    /// ```
