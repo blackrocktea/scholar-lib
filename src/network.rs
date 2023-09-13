@@ -78,3 +78,6 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     pub fn from_file(path: impl AsRef<Path>) -> Result<Self, LoadErr> {
         let file = fs::File::open(path)?;
         let decoded: NeuralNet<A> = bincode::deserialize_from(file)?;
+
+        Ok(decoded)
+    }
