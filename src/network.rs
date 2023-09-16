@@ -84,3 +84,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 
     /// Trains the network on the given `Dataset` for the given number of `iterations`.
     ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// use scholar::{Dataset, NeuralNet, Sigmoid};
