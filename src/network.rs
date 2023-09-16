@@ -81,3 +81,6 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 
         Ok(decoded)
     }
+
+    /// Trains the network on the given `Dataset` for the given number of `iterations`.
+    ///
