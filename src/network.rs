@@ -88,3 +88,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     ///
     /// ```rust
     /// use scholar::{Dataset, NeuralNet, Sigmoid};
+    ///
+    /// let dataset = Dataset::from_csv("iris.csv", false, 4)?;
+    ///
+    /// let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[4, 10, 10, 1]);
+    ///
