@@ -93,3 +93,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     ///
     /// let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[4, 10, 10, 1]);
     ///
+    /// // Trains the network by iterating over the entire dataset 10,000 times. The last parameter
+    /// // (the 'learning rate') dictates how quickly the network 'adapts to the dataset'
+    /// brain.train(dataset, 10_000, 0.01);
+    /// ```
