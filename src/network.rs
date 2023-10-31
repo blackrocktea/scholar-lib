@@ -97,3 +97,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// // (the 'learning rate') dictates how quickly the network 'adapts to the dataset'
     /// brain.train(dataset, 10_000, 0.01);
     /// ```
+    pub fn train(&mut self, mut training_dataset: Dataset, iterations: u64, learning_rate: f64) {
+        let progress_bar = indicatif::ProgressBar::new(iterations);
+        progress_bar.set_style(
+            indicatif::ProgressStyle::default_bar()
+                .template("Training [{bar:30}] {percent:>3}% ETA: {eta}")
