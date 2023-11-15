@@ -108,3 +108,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         // The progress bar is only updated every percentage progressed so as not to significantly
         // impact the speed of training
         let percentile = iterations / 100;
+
+        for i in 1..iterations {
+            training_dataset.shuffle();
+            for (inputs, targets) in &training_dataset {
+                let guesses = self.guess(inputs);
