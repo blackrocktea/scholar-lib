@@ -102,3 +102,9 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         progress_bar.set_style(
             indicatif::ProgressStyle::default_bar()
                 .template("Training [{bar:30}] {percent:>3}% ETA: {eta}")
+                .progress_chars("=> "),
+        );
+
+        // The progress bar is only updated every percentage progressed so as not to significantly
+        // impact the speed of training
+        let percentile = iterations / 100;
