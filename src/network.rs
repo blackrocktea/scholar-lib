@@ -118,3 +118,12 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 
             if i % percentile == 0 {
                 progress_bar.inc(percentile);
+            }
+        }
+
+        progress_bar.finish_and_clear();
+    }
+
+    /// Calculates the average cost of the network.
+    ///
+    /// # Examples
