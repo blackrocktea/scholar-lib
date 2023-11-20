@@ -127,3 +127,10 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// Calculates the average cost of the network.
     ///
     /// # Examples
+    ///
+    /// ```rust
+    /// use scholar::{Dataset, NeuralNet, Sigmoid};
+    ///
+    /// let dataset = Dataset::from_csv("iris.csv", false, 4)?;
+    /// let (training_data, testing_data) = dataset.split(0.75);
+    ///
