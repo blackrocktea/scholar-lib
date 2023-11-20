@@ -113,3 +113,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             training_dataset.shuffle();
             for (inputs, targets) in &training_dataset {
                 let guesses = self.guess(inputs);
+                self.backpropagate(&guesses, targets, learning_rate);
+            }
+
+            if i % percentile == 0 {
+                progress_bar.inc(percentile);
