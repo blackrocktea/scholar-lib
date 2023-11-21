@@ -134,3 +134,9 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// let dataset = Dataset::from_csv("iris.csv", false, 4)?;
     /// let (training_data, testing_data) = dataset.split(0.75);
     ///
+    /// let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[4, 10, 10, 1]);
+    /// brain.train(training_data, 10_000, 0.01);
+    ///
+    /// let avg_cost = brain.test(testing_data);
+    /// println!("Accuracy: {:.2}%", (1.0 - avg_cost) * 100.0);
+    /// ```
