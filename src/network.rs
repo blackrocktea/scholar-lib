@@ -140,3 +140,12 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// let avg_cost = brain.test(testing_data);
     /// println!("Accuracy: {:.2}%", (1.0 - avg_cost) * 100.0);
     /// ```
+    pub fn test(&mut self, testing_dataset: Dataset) -> f64 {
+        let mut avg_cost = 0.0;
+        for (inputs, targets) in &testing_dataset {
+            let guesses = self.guess(inputs);
+            // Iterates over each guess value, compares it to its target, and
+            // sums the costs
+            let cost_sum: f64 = guesses
+                .iter()
+                .zip(targets)
