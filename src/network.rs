@@ -154,3 +154,10 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             avg_cost += cost_sum / guesses.len() as f64;
         }
         avg_cost /= testing_dataset.rows() as f64;
+
+        avg_cost
+    }
+
+    /// Saves the network in a binary format to the specified path.
+    ///
+    /// # Examples
