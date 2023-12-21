@@ -149,3 +149,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             let cost_sum: f64 = guesses
                 .iter()
                 .zip(targets)
+                .map(|(i, t)| (t - i).abs())
+                .sum();
+            avg_cost += cost_sum / guesses.len() as f64;
+        }
+        avg_cost /= testing_dataset.rows() as f64;
