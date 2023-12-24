@@ -165,3 +165,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// ```rust
     /// use scholar::{NeuralNet, Sigmoid};
     ///
+    /// let brain: NeuralNet<Sigmoid> = NeuralNet::new(&[2, 2, 1]);
+    ///
+    /// // Note that the file doesn't have to use the '.network' extension; you can actually
+    /// // choose anything you wish!
+    /// brain.save("brain.network")?;
