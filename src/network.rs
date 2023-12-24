@@ -161,3 +161,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// Saves the network in a binary format to the specified path.
     ///
     /// # Examples
+    ///
+    /// ```rust
+    /// use scholar::{NeuralNet, Sigmoid};
+    ///
