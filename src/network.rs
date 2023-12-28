@@ -170,3 +170,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// // Note that the file doesn't have to use the '.network' extension; you can actually
     /// // choose anything you wish!
     /// brain.save("brain.network")?;
+    /// ```
+    pub fn save(&self, path: impl AsRef<Path>) -> Result<(), SaveErr> {
+        let encoded = bincode::serialize(&self)?;
+        fs::write(path, encoded)?;
