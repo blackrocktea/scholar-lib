@@ -174,3 +174,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     pub fn save(&self, path: impl AsRef<Path>) -> Result<(), SaveErr> {
         let encoded = bincode::serialize(&self)?;
         fs::write(path, encoded)?;
+
+        Ok(())
+    }
+
+    /// Performs the feedforward algorithm on the given input slice, returning the value of the
