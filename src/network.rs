@@ -179,3 +179,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     }
 
     /// Performs the feedforward algorithm on the given input slice, returning the value of the
+    /// output layer as a vector.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
