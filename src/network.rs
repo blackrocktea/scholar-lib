@@ -184,3 +184,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// # Examples
     ///
     /// ```rust
+    /// use scholar::{NeuralNet, Sigmoid};
+    ///
+    /// let mut brain: NeuralNet<Sigmoid> = NeuralNet::new(&[3, 10, 2]);
+    /// let result = brain.guess(&[1.0, 0.0, -0.5]);
