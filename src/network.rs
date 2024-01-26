@@ -205,3 +205,10 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
                 "incorrect number of inputs supplied (expected {}, found {})",
                 num_input_layer_rows, num_inputs
             );
+        }
+
+        let num_layers = self.layers.len();
+        // Stores the given inputs into the network's input layer
+        self.layers[0] = convert_slice_to_matrix(inputs);
+
+        for i in 0..num_layers - 1 {
