@@ -193,3 +193,15 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     /// ```
     ///
     /// # Panics
+    ///
+    /// This method panics if the number of given input values is not equal to the number of nodes
+    /// in the network's input layer.
+    pub fn guess(&mut self, inputs: &[f64]) -> Vec<f64> {
+        let num_inputs = inputs.len();
+        // The number of rows/values in the input layer of the network
+        let num_input_layer_rows = self.layers[0].row_iter().len();
+        if num_inputs != num_input_layer_rows {
+            panic!(
+                "incorrect number of inputs supplied (expected {}, found {})",
+                num_input_layer_rows, num_inputs
+            );
