@@ -212,3 +212,9 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         self.layers[0] = convert_slice_to_matrix(inputs);
 
         for i in 0..num_layers - 1 {
+            let mut value = &self.weights[i] * &self.layers[i];
+            value += &self.biases[i];
+
+            for x in value.iter_mut() {
+                *x = A::activate(*x);
+            }
