@@ -218,3 +218,5 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             for x in value.iter_mut() {
                 *x = A::activate(*x);
             }
+
+            // Feeds the value forward to the next layer
