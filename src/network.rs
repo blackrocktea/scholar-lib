@@ -220,3 +220,11 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             }
 
             // Feeds the value forward to the next layer
+            self.layers[i + 1] = value;
+        }
+
+        self.layers[num_layers - 1].iter().cloned().collect()
+    }
+
+    /// Performs the backpropagation algorithm using the network's guessed values for a particular
+    /// input, and the real target values.
