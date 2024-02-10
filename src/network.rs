@@ -228,3 +228,6 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 
     /// Performs the backpropagation algorithm using the network's guessed values for a particular
     /// input, and the real target values.
+    fn backpropagate(&mut self, guesses: &[f64], targets: &[f64], learning_rate: f64) {
+        let guesses = convert_slice_to_matrix(guesses);
+        let targets = convert_slice_to_matrix(targets);
