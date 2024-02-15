@@ -231,3 +231,9 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
     fn backpropagate(&mut self, guesses: &[f64], targets: &[f64], learning_rate: f64) {
         let guesses = convert_slice_to_matrix(guesses);
         let targets = convert_slice_to_matrix(targets);
+
+        let num_layers = self.layers.len();
+        // Calculates and sets the value of the last error matrix
+        self.errors[num_layers - 2] = targets - guesses;
+
+        // Iterates over each layer (except for the input layer) in reverse
