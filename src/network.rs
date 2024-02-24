@@ -241,3 +241,11 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
             let mut gradients = layer.map(A::derivative);
             gradients.component_mul_assign(&self.errors[i - 1]);
             gradients *= learning_rate;
+
+            let deltas = &gradients * self.layers[i - 1].transpose();
+            self.weights[i - 1] += deltas;
+
+            self.biases[i - 1] += gradients;
+
+            // Calculates the errors for the next layer unless it is the last iteration
+            if i != 1 {
