@@ -237,3 +237,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         self.errors[num_layers - 2] = targets - guesses;
 
         // Iterates over each layer (except for the input layer) in reverse
+        for (i, layer) in self.layers.iter().enumerate().skip(1).rev() {
+            let mut gradients = layer.map(A::derivative);
+            gradients.component_mul_assign(&self.errors[i - 1]);
+            gradients *= learning_rate;
