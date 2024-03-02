@@ -249,3 +249,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 
             // Calculates the errors for the next layer unless it is the last iteration
             if i != 1 {
+                self.errors[i - 2] = self.weights[i - 1].transpose() * &self.errors[i - 1];
+            }
+        }
+    }
+}
