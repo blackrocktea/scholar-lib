@@ -254,3 +254,8 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
         }
     }
 }
+
+/// An activation for a `NeuralNet`, including a function and a 'derivative' function.
+///
+/// # Examples
+///
