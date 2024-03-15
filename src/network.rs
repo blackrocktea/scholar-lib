@@ -259,3 +259,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 ///
 /// # Examples
 ///
+/// The code below shows how to implement the
+/// [ReLU activation](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)):
+///
+/// ```rust
