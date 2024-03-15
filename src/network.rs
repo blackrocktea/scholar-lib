@@ -263,3 +263,7 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 /// [ReLU activation](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)):
 ///
 /// ```rust
+/// use serde::{Serialize, Deserialize};
+///
+/// // The activation must be serializable and deserializable so that the network can be
+/// // saved/loaded to/from files
