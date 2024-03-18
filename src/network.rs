@@ -267,3 +267,13 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 ///
 /// // The activation must be serializable and deserializable so that the network can be
 /// // saved/loaded to/from files
+/// #[derive(Serialize, Deserialize)]
+/// struct Relu;
+///
+/// impl scholar::Activation for Relu {
+///     fn activate(x: f64) -> f64 {
+///         x.max(0.0)
+///     }
+///
+///     fn derivative(x: f64) -> f64 {
+///         if x > 0.0 {
