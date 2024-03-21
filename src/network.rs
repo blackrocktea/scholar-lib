@@ -280,3 +280,10 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 ///             1.0
 ///         } else {
 ///             0.0
+///         }
+///     }
+/// }
+/// ```
+pub trait Activation {
+    /// The activation function.
+    fn activate(x: f64) -> f64;
