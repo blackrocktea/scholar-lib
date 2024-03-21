@@ -301,3 +301,10 @@ pub trait Activation {
     /// 'references'. This is because in the context of neural networks the activation's regular
     /// function will have always been applied to the input of its derivative function, no matter
     /// the circumstances. The derivative of sigmoid thus becomes:
+    ///
+    /// ```
+    /// x * (1 - x)
+    /// ```
+    ///
+    /// which matches what the real implementation looks like:
+    ///
