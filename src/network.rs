@@ -295,3 +295,9 @@ pub trait Activation {
     ///
     /// ```
     /// σ(x) * (1 - σ(x))
+    /// ```
+    ///
+    /// When implementing this in code for a `NeuralNet`, however, you can simply remove these
+    /// 'references'. This is because in the context of neural networks the activation's regular
+    /// function will have always been applied to the input of its derivative function, no matter
+    /// the circumstances. The derivative of sigmoid thus becomes:
