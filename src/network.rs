@@ -308,3 +308,13 @@ pub trait Activation {
     ///
     /// which matches what the real implementation looks like:
     ///
+    /// ```rust
+    /// impl Activation for Sigmoid {
+    ///     ...
+    ///
+    ///     fn derivative(x: f64) -> f64 {
+    ///         x * (1.0 - x)
+    ///     }
+    /// }
+    /// ```
+    fn derivative(x: f64) -> f64;
