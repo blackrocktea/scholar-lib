@@ -287,3 +287,11 @@ impl<A: Activation + Serialize + DeserializeOwned> NeuralNet<A> {
 pub trait Activation {
     /// The activation function.
     fn activate(x: f64) -> f64;
+    /// The 'derivative' of the activation function.
+    ///
+    /// There is a small quirk regarding this function that occurs when it
+    /// 'references' the `activate` function of the same trait implementation.
+    /// For example, the real derivative of the sigmoid (σ) function is:
+    ///
+    /// ```
+    /// σ(x) * (1 - σ(x))
