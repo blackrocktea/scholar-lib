@@ -333,3 +333,7 @@ impl Activation for Sigmoid {
         x * (1.0 - x)
     }
 }
+
+/// An enumeration over the possible errors when saving a network to a file.
+#[derive(thiserror::Error, Debug)]
+pub enum SaveErr {
