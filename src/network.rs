@@ -323,3 +323,13 @@ pub trait Activation {
 /// The sigmoid activation.
 #[derive(Serialize, Deserialize)]
 pub struct Sigmoid;
+
+impl Activation for Sigmoid {
+    fn activate(x: f64) -> f64 {
+        1.0 / (1.0 + (-x).exp())
+    }
+
+    fn derivative(x: f64) -> f64 {
+        x * (1.0 - x)
+    }
+}
