@@ -337,3 +337,9 @@ impl Activation for Sigmoid {
 /// An enumeration over the possible errors when saving a network to a file.
 #[derive(thiserror::Error, Debug)]
 pub enum SaveErr {
+    /// When serializing the network fails.
+    #[error("failed to serialize network")]
+    Serialize(#[from] bincode::Error),
+    /// When writing to the file fails.
+    #[error("failed to write to file")]
+    FileWrite(#[from] std::io::Error),
