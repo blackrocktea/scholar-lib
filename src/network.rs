@@ -348,3 +348,5 @@ pub enum SaveErr {
 /// An enumeration over the possible errors when loading a network from a file.
 #[derive(thiserror::Error, Debug)]
 pub enum LoadErr {
+    /// When deserializing the network fails.
+    #[error("failed to deserialize network")]
