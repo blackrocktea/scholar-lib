@@ -343,3 +343,8 @@ pub enum SaveErr {
     /// When writing to the file fails.
     #[error("failed to write to file")]
     FileWrite(#[from] std::io::Error),
+}
+
+/// An enumeration over the possible errors when loading a network from a file.
+#[derive(thiserror::Error, Debug)]
+pub enum LoadErr {
