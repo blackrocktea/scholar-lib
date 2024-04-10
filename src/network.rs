@@ -350,3 +350,7 @@ pub enum SaveErr {
 pub enum LoadErr {
     /// When deserializing the network fails.
     #[error("failed to deserialize network")]
+    Deserialize(#[from] bincode::Error),
+    /// When reading from the file fails.
+    #[error("failed to read from file")]
+    FileRead(#[from] std::io::Error),
