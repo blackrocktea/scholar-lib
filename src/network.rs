@@ -354,3 +354,4 @@ pub enum LoadErr {
     /// When reading from the file fails.
     #[error("failed to read from file")]
     FileRead(#[from] std::io::Error),
+}
