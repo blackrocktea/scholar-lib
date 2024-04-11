@@ -1,0 +1,2 @@
+
+# Scholar Lib\n\nA comprehensive and easy-to-use supervised machine learning library.\n\nFor integrating Scholar Lib in your project, add the following to your `Cargo.toml` dependencies...\n\n```toml\nscholar-lib = "0.1"\n```\n\n... subsequent to that, refer to the library's [documentation](https://docs.rs/scholar-lib) for the usage instructions. Credit for the original creation and development goes to the open-source community.
